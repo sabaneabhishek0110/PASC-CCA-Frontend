@@ -23,6 +23,7 @@
     --color-card: #030c20;
     --color-profile: #253550;
     --color-border: #5f5e64;
+    --color-tabs : #0F172A;
 
     /* text colors */
     --color-text-primary: #ffffff;
@@ -44,6 +45,9 @@
 @layer utilities {
   .bg-background {
     background-color: var(--color-background);
+  }
+  .bg-background-dark {
+    background-color: var(--color-background-tabs);
   }
 
   .bg-card {
