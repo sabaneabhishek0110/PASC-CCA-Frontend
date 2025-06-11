@@ -86,11 +86,11 @@ export default function EventsDashboard() {
                       variant="outline"
                       className={`
                         ${event.status === "Upcoming"
-                          ? "text-blue-500 border-blue-500"
+                          ? "text-[var(--color-badge-upcoming)] border-[var(--color-badge-upcoming)]"
                           : event.status === "Ongoing"
-                          ? "text-green-500 border-green-500"
-                          : "text-gray-500 border-gray-500"}
-                          text-md
+                          ? "text-[var(--color-badge-ongoing)] border-[var(--color-badge-ongoing)]"
+                          : "text-[var(--color-badge-completed)] border-[var(--color-badge-completed)]"}
+                        text-md
                       `}
                     >
                       {event.status}
@@ -119,12 +119,12 @@ export default function EventsDashboard() {
                   <CardContent className="p-4 pt-0">
                   <div className="flex gap-2">
                     {event.status !== "Completed" && (
-                      <Button className={`flex-6 text-xl ${event.status==="Ongoing"?"bg-blue-200 dark:bg-gray-800":"bg-blue-600 text-white"}`}>
+                      <Button className={`flex-6 text-xl bg-[var(--color-button-rsvp)] text-white dark:bg-[var(--color-button-rsvp)] dark:text-white`}>
                         {event.isRSVPed ? "Cancel RSVP" : "RSVP"}
                       </Button>
                     )}
-                    {event.status==="Completed" && (
-                      <Button className="flex-6 text-xl bg-gray-200 dark:bg-gray-900" >
+                    {event.status === "Completed" && (
+                      <Button className="flex-6 text-xl bg-[var(--color-button-disabled)] text-[var(--color-badge-completed)] cursor-not-allowed" disabled>
                         RSVP
                       </Button>
                     )}
